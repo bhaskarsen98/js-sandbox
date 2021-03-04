@@ -4,7 +4,7 @@
 
 
 
-//conditional branching (Mar 1 2021)
+//****conditional branching (Mar 1 2021)****
 
   let birthYear = prompt("Guess my year of birth ?");
   let wrongAns = true;
@@ -33,7 +33,7 @@
   //ternary operator can also be stacked like multiple if-else-if
   //though not recommended
 
-//Logical operators
+//****Logical operators****
   
   // ||, &&, !, ??
   //?? is new kind here called nullish coalesing
@@ -53,10 +53,10 @@
   // here if we wish to add userName field , we can use the first
   // non-empty string encountered or else Anonymous shows up
 
-    alert(alert(1) || 2 || null)
+  alert(alert(1) || 2 || null)
 
-    //here op will be 1 then 2
-    //because alert return undefined which is falsy
+  //here op will be 1 then 2
+  //because alert return undefined which is falsy
 
 
   // **  && ** just like or this tries to find first falsy value
@@ -83,3 +83,29 @@
   //sometimes ** !! ** is used to convert to boolean
   // ie:
   alert (Boolean(x) == !!x)
+
+
+  //Nullish Coalescing (Mar 3 2021)
+  //treats null and undefined similarly.
+  //returns the first encountered defined(non null and non undefined)
+  result = a ?? b;
+  //can also be written as
+  result = (a != null && a != undefined) ? a : b;
+
+
+  alert(firstName ?? lastName ?? nickName ?? "Anonymous");//as used in ||
+
+  // so what's the diff?
+  // || recognizes 0, '', false as falsy values and returns them first
+  // ?? doesn't do that.
+  //advantages:
+  let height = 0;
+  alert(height || 100); // return 100
+  alert(height ?? 100); // returns 0
+  //here if use || , then if the height entered is 0 
+  // or makes it 100 , hence use ??
+  // || has higher precedence than ??, refer: 
+  //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#table
+  
+  
+    
