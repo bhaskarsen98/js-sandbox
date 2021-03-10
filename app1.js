@@ -158,4 +158,12 @@
   // 4 0
 
   
+
+// **switches**
+
+  // same as cpp but case can include anything
+
+
+  
+  
     
