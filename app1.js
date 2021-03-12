@@ -163,6 +163,58 @@
 
   // same as cpp but case can include anything
 
+//** LOOPS**
+  function testFunc(s){
+
+    console.log(typeof(s));
+  
+  }
+
+  testFunc(10);
+  testFunc('hello');
+  testFunc(true);
+
+  //local variables can be declared using let keyword inside the function body
+  //outer variables (global) are declaed outside the function def.
+  //If a same-named variable is declared inside the function then it shadows the outer one
+
+  // It’s a good practice to minimize the use of global variables. Modern code has few or no globals. Most 
+  //variables reside in their functions. Sometimes though, they can be useful to store project-level data.
+
+  //parameters/Args
+
+    function reply(name, message){
+
+      console.log(name + ' : ' + message);
+    
+    }
+
+    reply('Bhaskar', 'Thanks for dropping by :)'); //call1
+    reply('Bhaskar', ); //call2
+    reply('Bhaskar'); //call3
+
+
+    // op:
+    // Bhaskar : Thanks for dropping by :)
+    // Bhaskar : undefined 
+    // Bhaskar : undefined
+
+
+    //call 1 works fine but in call2 and call3, the  2nd argument is missing hence JS assigns undefined to message
+    // while this isn't desirable where return value is critical to the value of args , hence it is better to provide a default value to arg:
+
+    function reply(name = 'John Doe', message = '**no message**'){
+
+      console.log(name + ' : ' + message);
+    
+    }
+
+    reply();
+
+    // op
+    // John Doe : **no message**
+
+
 
   
   
