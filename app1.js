@@ -163,7 +163,7 @@
 
   // same as cpp but case can include anything
 
-//** LOOPS**
+//** Functions**
   function testFunc(s){
 
     console.log(typeof(s));
@@ -215,7 +215,69 @@
     // John Doe : **no message**
 
 
+    //return values
 
-  
-  
     
+    function reply(name = 'John Doe', message = '**no message**'){
+
+      console.log(name + ' : ' + message);      
+      return 'sent!'; //returns a string 'sent!'
+
+    }
+
+    function reply(name = 'John Doe', message = '**no message**'){
+
+      console.log(name + ' : ' + message);      
+      return; //returns undefined
+              //here using return in function call transfers the program call to the point form where it is called , and returns undefined
+      
+    }
+
+    function reply(name = 'John Doe', message = '**no message**'){
+
+      console.log(name + ' : ' + message);      
+      confirmation = confirm('Do you want to send');
+
+      if(confirmation){
+        return 'sent'; //returns 'sent' if true
+      }else{
+        return 'not sent'; //returns 'not sent' if false
+      }
+
+    }
+
+    //if return statement is awfully long, you may add a parenthesis and then wrap the return statement accross multiple lines
+    //function names are usually verbs
+    //a function shall perform only the task that its name suggests
+    //a function shall preferablly perform one task
+
+    //like:
+    function showPrimes(n) {
+      nextPrime: for (let i = 2; i < n; i++) {
+    
+        for (let j = 2; j < i; j++) {
+          if (i % j == 0) continue nextPrime;
+        }
+    
+        alert( i ); // a prime
+      }
+    }
+
+            //  vs  
+
+            
+    function showPrimes(n) {
+
+      for (let i = 2; i < n; i++) {
+        if (!isPrime(i)) continue;
+    
+        alert(i);  // a prime
+      }
+    }
+    
+    function isPrime(n) {
+      for (let i = 2; i < n; i++) {
+        if ( n % i == 0) return false;
+      }
+      return true;
+    }
