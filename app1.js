@@ -281,3 +281,127 @@
       }
       return true;
     }
+
+    //**function expression **
+    function reply(name = 'John Doe', message = '**no message**') {
+
+      console.log(name + ' : ' + message);
+      confirmation = confirm('Do you want to send');
+    
+      if (confirmation) {
+    
+        return 'sent';
+      }else{
+        return 'not sent';
+      }
+    
+    }
+    
+    
+    let replyr = reply;
+    
+    console.log('call 1' + reply);
+    
+    console.log('call 2' + replyr);
+    console.log('call 3' + reply());
+    
+    console.log('call 4' + replyr());
+
+    
+
+    // call 1function reply(name = 'John Doe', message = '**no message**') {
+
+    //   console.log(name + ' : ' + message);
+    //   confirmation = confirm('Do you want to send');
+    
+    //   if (confirmation) {
+    
+    //     return 'sent';
+    //   }else{
+    //     return 'not sent';
+    //   }
+    
+    // } 
+    // call 2function reply(name = 'John Doe', message = '**no message**') {
+    
+    //   console.log(name + ' : ' + message);
+    //   confirmation = confirm('Do you want to send');
+    
+    //   if (confirmation) {
+    
+    //     return 'sent';
+    //   }else{
+    //     return 'not sent';
+    //   }
+    
+    // } 
+    // John Doe : **no message** 
+    // call 3sent 
+    // John Doe : **no message** 
+    // call 4sent 
+
+  //in javascript, a function  just like any other value can be assigned to variable as showed
+
+  //call 1 and call 2 dont execute the function, but they rather pass their source code as a string
+  
+  //function expression can also be used to declare functions
+
+  let userName = function(user){
+    console.log(user)
+  };
+  //such functions are called anonymous 
+  //dont forget semicolon in such kind of declration at the end of function block;
+
+  // also
+
+  let func1 = userName;
+  // isnt same as
+  let func2 = userName();
+
+  // func2 is a call to userName not userName function
+
+  //Immidiately invokable function expressions(IIFE)
+
+    (function (){
+      console.log('hi IIFE here!');
+    })
+
+    //Now this is just a function, to make it execute we need to call it using paranthesis
+
+    // ie.
+    
+    (function (){
+      console.log('hi IIFE here!');
+    })();
+
+    // a function can also be passed as parameters to other functions as well
+    //like here:
+
+    function transportType(wheels,checker){
+      checker(wheels);    //checker is an arg function
+    }
+
+    transportType(  //function call
+      4, 
+      function(n){    //illustration for callback function
+                      //https://developer.mozilla.org/en-US/docs/Glossary/Callback_function
+        if(n==4){
+          console.log('its a car');
+        }else{
+          console.log('its not a car');
+      }
+    });
+
+    //The main diff b/w a declaration and expression is how the JS engine works with them
+    //An expression is usable when code flow reaches the right side of the '=' operator in the expression
+    //While declarations are available for use in any part of code (irrespective of their point of declaration)**
+    //**In strict mode declaration respect the limitaions of block and scope  (since ES2015)
+
+    //expressions are helpful when we need conditional declarations that are visible outside their block's scope
+    // see https://javascript.info/function-expressions for example
+
+    
+
+
+
+    
