@@ -400,8 +400,18 @@
     //expressions are helpful when we need conditional declarations that are visible outside their block's scope
     // see https://javascript.info/function-expressions for example
 
+  //**Arrow Functions**
     
+    // let func = (arg1, arg2, ..., argN) => expression
+    
+    //certain ex:
 
+    let twice = n => n*2;
+    let adder = (a,b) => a+b;
+    let greet = () => console.log('hi there!');
 
+    //arrow functions can be used to create functions dynamically , same as function expressions
+
+    
 
     
